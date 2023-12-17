@@ -1,0 +1,8 @@
+name: "AtomShulkers"
+version: "${version}"
+main: "com.atombuilt.shulkers.AtomShulkersPlugin"
+author: "AtomBuilt"
+website: "https://atombuilt.com"
+description: "Adds ability to open shulkers in hand."
+api-version: "1.20"
+load: STARTUP

@@ -1,0 +1,10 @@
+# idea
+/.idea
+*.iml
+
+# gradle
+/build
+/.gradle
+
+# run-paper
+/run
