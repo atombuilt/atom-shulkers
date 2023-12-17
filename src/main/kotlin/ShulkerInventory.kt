@@ -1,8 +1,6 @@
 package com.atombuilt.shulkers
 
 import com.atombuilt.atomkt.spigot.listener.KotlinListener
-import com.atombuilt.atomkt.spigot.listener.register
-import com.atombuilt.atomkt.spigot.listener.unregister
 import net.minecraft.world.item.BlockItem
 import org.bukkit.Bukkit
 import org.bukkit.Material
@@ -18,7 +16,6 @@ import org.bukkit.inventory.InventoryHolder
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.BlockStateMeta
 import org.koin.core.component.KoinComponent
-import org.koin.core.component.get
 import net.kyori.adventure.sound.Sound as AdventureSound
 import net.minecraft.world.item.ItemStack as NMSItemStack
 
@@ -38,7 +35,7 @@ class ShulkerInventory private constructor(
 
     private fun open() {
         playOpenSound()
-        register(get())
+        register()
         player.openInventory(inventory)
     }
 
