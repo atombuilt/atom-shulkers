@@ -16,7 +16,7 @@ repositories {
 dependencies {
     paperweight.paperDevBundle("1.20.3-R0.1-SNAPSHOT")
     implementation("org.bstats", "bstats-bukkit", "3.0.2")
-    implementation("com.atombuilt.atomkt", "spigot", "1.0.2")
+    implementation("com.atombuilt.atomkt", "spigot", "2.0.0")
 }
 
 kotlin {
