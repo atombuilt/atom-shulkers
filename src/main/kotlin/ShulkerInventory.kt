@@ -40,7 +40,12 @@ class ShulkerInventory private constructor(
     private var inventory = createInventory()
 
     private fun createInventory(): Inventory {
-        val inventory = Bukkit.createInventory(inventoryHolder, InventoryType.SHULKER_BOX)
+        val displayName = meta.displayName()
+        val inventory = if (displayName != null) {
+            Bukkit.createInventory(inventoryHolder, InventoryType.SHULKER_BOX, displayName)
+        } else {
+            Bukkit.createInventory(inventoryHolder, InventoryType.SHULKER_BOX)
+        }
         blockState.tileEntity.contents.forEachIndexed { index, itemStack ->
             inventory.setItem(index, CraftItemStack.asBukkitCopy(itemStack))
         }
