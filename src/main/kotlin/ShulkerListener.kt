@@ -20,7 +20,7 @@ import org.bukkit.inventory.ItemStack
 
 class ShulkerListener : KotlinListener {
 
-    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = false)
     fun openShulkerInHand(event: PlayerInteractEvent) {
         if (event.action != Action.RIGHT_CLICK_AIR) return
         val player = event.player
