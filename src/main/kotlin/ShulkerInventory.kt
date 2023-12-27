@@ -53,22 +53,22 @@ class ShulkerInventory private constructor(
     }
 
     private fun open() {
-        playOpenSound()
+        playSound(Sound.BLOCK_SHULKER_BOX_OPEN)
         register()
         player.openInventory(inventory)
-    }
-
-    private fun playOpenSound() {
-        val sound = AdventureSound.sound().type(Sound.BLOCK_SHULKER_BOX_OPEN).build()
-        player.playSound(sound)
     }
 
     @EventHandler(ignoreCancelled = true)
     fun onInventoryClose(event: InventoryCloseEvent) {
         if (event.inventory.holder !== inventoryHolder) return
-        playCloseSound()
+        playSound(Sound.BLOCK_SHULKER_BOX_CLOSE)
         updateItemStack()
         unregister()
+    }
+
+    private fun playSound(soundType: Sound) {
+        val sound = AdventureSound.sound().type(soundType).build()
+        player.playSound(sound)
     }
 
     private fun updateItemStack() {
@@ -82,11 +82,6 @@ class ShulkerInventory private constructor(
     private fun ItemStack?.toNMS(): NMSItemStack {
         if (this == null) return CraftItemStack.asNMSCopy(ItemStack(Material.AIR))
         return (this as CraftItemStack).handle
-    }
-
-    private fun playCloseSound() {
-        val sound = AdventureSound.sound().type(Sound.BLOCK_SHULKER_BOX_CLOSE).build()
-        player.playSound(sound)
     }
 
     companion object {
