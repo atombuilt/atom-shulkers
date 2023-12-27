@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.atombuilt.shulkers"
-version = "1.0.0"
+version = "1.20.4"
 
 repositories {
     mavenCentral()
@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    paperweight.paperDevBundle("1.20.2-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.20.4-R0.1-SNAPSHOT")
     implementation("org.bstats", "bstats-bukkit", "3.0.2")
     implementation("com.atombuilt.atomkt", "spigot", "2.0.0")
 }
@@ -29,7 +29,7 @@ tasks {
     }
 
     runServer {
-        minecraftVersion("1.20.2")
+        minecraftVersion("1.20.4")
     }
 
     shadowJar {
