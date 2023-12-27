@@ -24,10 +24,15 @@ class AtomShulkersPlugin : KotlinPlugin() {
 
     override suspend fun onEnabled() {
         log.logAtomBuiltBanner()
-        metrics = Metrics(this, 20507)
+        metrics = Metrics(this, METRICS_SERVICE_ID)
     }
 
     override suspend fun onDisabled() {
         metrics.shutdown()
+    }
+
+    companion object {
+
+        private const val METRICS_SERVICE_ID = 20507
     }
 }
